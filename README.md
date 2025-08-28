@@ -138,12 +138,3 @@ jstest /dev/input/js0
 ---
 
 🚀 Built with ❤️ for Retro Gaming
-
-```
-
----
-
-✅ This is clean, GitHub-ready, and has a **GPIO pinout mapping table**.  
-
-Do you also want me to generate a **PNG wiring diagram** for the repo (Pi Zero 2W pins + ADS1115 + buttons/joysticks) so users can see it visually?
-```
