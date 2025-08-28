@@ -13,6 +13,7 @@ This project sets up **RetroPie** on a **Raspberry Pi Zero 2 W** with overclocki
 
   * \~40% faster single-core
   * \~500% faster multi-core compared to original Zero
+![Raspberry Pi Logo](https://assets.raspberrypi.com/static/f03a00485ac096c1033ad1c4a530d63b/6fe49/zero2-close-up.webp)
 
 ---
 
