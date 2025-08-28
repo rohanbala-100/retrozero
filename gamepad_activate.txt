@@ -63,12 +63,16 @@
 
 
 //code for retro_gamepad.py
-
+''''
 # retro_gamepad_legacy.py
 import time
 import Adafruit_ADS1x15  # Legacy ADS1x15 library
 import RPi.GPIO as GPIO
 import uinput
+import logging
+
+# Setup logging
+logging.basicConfig(filename="/home/pi/retro_gamepad.log", level=logging.INFO, format="%(asctime)s - %(message)s")
 
 # Buttons mapping
 buttons = {
@@ -94,13 +98,17 @@ for pin in buttons:
 # Joystick setup using legacy library
 adc = Adafruit_ADS1x15.ADS1115()
 
-# Create virtual device
+def scale_axis(val):
+    return int((val + 32768) >> 1)  # -32768..32767 → 0..32767
+
+
 device = uinput.Device([
     uinput.ABS_X + (0, 32767, 0, 0),
     uinput.ABS_Y + (0, 32767, 0, 0),
     uinput.ABS_RX + (0, 32767, 0, 0),
     uinput.ABS_RY + (0, 32767, 0, 0),
 ] + list(buttons.values()))
+
 
 time.sleep(1)
 
@@ -117,10 +125,10 @@ try:
                 logging.info(f"Button {btn} {'pressed' if pressed else 'released'}")
 
         # --- Joysticks ---
-        x = adc.read_adc(0, gain=1)
-        y = adc.read_adc(1, gain=1)
-        rx = adc.read_adc(2, gain=1)
-        ry = adc.read_adc(3, gain=1)
+        x = scale_axis(adc.read_adc(0, gain=1))
+        y = scale_axis(adc.read_adc(1, gain=1))
+        rx = scale_axis(adc.read_adc(2, gain=1))
+        ry = scale_axis(adc.read_adc(3, gain=1))
 
         device.emit(uinput.ABS_X, x)
         device.emit(uinput.ABS_Y, y)
@@ -135,13 +143,14 @@ try:
 except KeyboardInterrupt:
     GPIO.cleanup()
     print("Exiting...")
+''''
 
 
 
 
 
 //code for retro_gamepad.service
-
+''''
 [Unit]
 Description=Retro Gamepad Service
 After=network.target
@@ -157,3 +166,4 @@ Group=root
 
 [Install]
 WantedBy=multi-user.target
+'''''
