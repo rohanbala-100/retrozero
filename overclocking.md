@@ -25,7 +25,7 @@ This project sets up **RetroPie** on a **Raspberry Pi Zero 2 W** with overclocki
 * ❌ Beyond N64 – not practical
 
 ---
-
+![retropie logo](https://retropie.org.uk/wp-content/uploads/2016/04/RetroPieWebsiteLogo.png)
 ## 🔧 Installation
 
 1. Download and flash RetroPie for **Pi 2/3/Zero 2 W** from the [RetroPie download page](https://retropie.org.uk/download/).
