@@ -93,5 +93,5 @@ To enable higher performance:
 * [Bytes N Bits Guide – Overclock Pi Zero 2 W for RetroPie](https://bytesnbits.co.uk/raspberry-pi-zero-2-w-retropie/)
 * [RetroPie Official Downloads](https://retropie.org.uk/download/)
 * [RetroPie Forums – Pi Zero 2 W Performance](https://retropie.org.uk/forum/)
-
+* [Retropie performance img file](https://files.retropie.org.uk/images/weekly/)
 ---
