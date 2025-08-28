@@ -1,0 +1,16 @@
+# /etc/systemd/system/retro_gamepad.service
+[Unit]
+Description=Retro Gamepad Service
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/retro_gamepad_legacy.py
+WorkingDirectory=/home/pi
+StandardOutput=journal
+StandardError=journal
+Restart=always
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
